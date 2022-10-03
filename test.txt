@@ -1,0 +1,300 @@
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (master)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 3 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        software development tools/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (master)
+$ ls
+'software development tools'/
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (master)
+$ git branch
+  develop
+  fetures
+* master
+  release/0.1.0
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (master)
+$ git add *
+warning: in the working copy of 'software development tools/lab1/calculater/src/Main.java', LF will be replaced by CRLF the next time Git touches it
+g
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (master)
+$ git commit -am "init commit"
+[master 02968fb] init commit
+ 10 files changed, 156 insertions(+)
+ create mode 100644 software development tools/lab1/calculater/.idea/.gitignore
+ create mode 100644 software development tools/lab1/calculater/.idea/codeStyles/Project.xml
+ create mode 100644 software development tools/lab1/calculater/.idea/codeStyles/codeStyleConfig.xml
+ create mode 100644 software development tools/lab1/calculater/.idea/misc.xml
+ create mode 100644 software development tools/lab1/calculater/.idea/modules.xml
+ create mode 100644 software development tools/lab1/calculater/calculater.iml
+ create mode 100644 software development tools/lab1/calculater/out/production/calculater/Main.class
+ create mode 100644 software development tools/lab1/calculater/out/production/calculater/MainTest.class
+ create mode 100644 software development tools/lab1/calculater/src/Main.java
+ create mode 100644 software development tools/lab1/calculater/src/MainTest.java
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (master)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 2 and 3 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (master)
+$ git push origin master
+To https://github.com/ahmad-al-nehlawi/ITMO-TEST.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/ahmad-al-nehlawi/ITMO-TEST.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (master)
+$ git push origin --force master
+Enumerating objects: 23, done.
+Counting objects: 100% (23/23), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (23/23), 4.61 KiB | 1.54 MiB/s, done.
+Total 23 (delta 0), reused 1 (delta 0), pack-reused 0
+To https://github.com/ahmad-al-nehlawi/ITMO-TEST.git
+ + 09e4c17...02968fb master -> master (forced update)
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (master)
+$ git branch
+  develop
+  fetures
+* master
+  release/0.1.0
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (master)
+$ git checkout develop
+Switched to branch 'develop'
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (develop)
+$ git status
+On branch develop
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        software development tools/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (develop)
+$ git commit "add dev branch"
+error: pathspec 'add dev branch' did not match any file(s) known to git
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (develop)
+$ git add*
+git: 'add*' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (develop)
+$ git add *
+warning: in the working copy of 'software development tools/lab1/calculater/.idea/workspace.xml', LF will be replaced by CRLF the next time Git touches it
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (develop)
+$ git commit "add dev branch"
+error: pathspec 'add dev branch' did not match any file(s) known to git
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (develop)
+$ git commit -m "add dev branch"
+[develop fe8afb6] add dev branch
+ 1 file changed, 101 insertions(+)
+ create mode 100644 software development tools/lab1/calculater/.idea/workspace.xml
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (develop)
+$ git push origin --force master
+Everything up-to-date
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (develop)
+$ git push origin --force develop
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (7/7), 1.64 KiB | 1.64 MiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'develop' on GitHub by visiting:
+remote:      https://github.com/ahmad-al-nehlawi/ITMO-TEST/pull/new/develop
+remote:
+To https://github.com/ahmad-al-nehlawi/ITMO-TEST.git
+ * [new branch]      develop -> develop
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (develop)
+$ git branch --all
+* develop
+  fetures
+  master
+  release/0.1.0
+  remotes/origin/develop
+  remotes/origin/master
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (develop)
+$ git checkout fetures
+Switched to branch 'fetures'
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (fetures)
+$ git add *
+fatal: pathspec '*' did not match any files
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (fetures)
+$ git add *
+fatal: pathspec '*' did not match any files
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (fetures)
+$ git status
+On branch fetures
+nothing to commit, working tree clean
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (fetures)
+$ touch test.txt
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (fetures)
+$ git add test.txt
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (fetures)
+$ git commit -m "add test.txt"
+[fetures 6079213] add test.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test.txt
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (fetures)
+$ git push origin --force fetures
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Writing objects: 100% (3/3), 245 bytes | 245.00 KiB/s, done.
+Total 3 (delta 0), reused 1 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'fetures' on GitHub by visiting:
+remote:      https://github.com/ahmad-al-nehlawi/ITMO-TEST/pull/new/fetures
+remote:
+To https://github.com/ahmad-al-nehlawi/ITMO-TEST.git
+ * [new branch]      fetures -> fetures
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (fetures)
+$ git checkout release
+error: pathspec 'release' did not match any file(s) known to git
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (fetures)
+$ git branch --all
+  develop
+* fetures
+  master
+  release/0.1.0
+  remotes/origin/develop
+  remotes/origin/fetures
+  remotes/origin/master
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (fetures)
+$ git checkout release/0.1.0
+Switched to branch 'release/0.1.0'
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (release/0.1.0)
+$ touch test.txt
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (release/0.1.0)
+$ git add test.txt
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (release/0.1.0)
+$ git commit -m "add test.txt"
+[release/0.1.0 12d1834] add test.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test.txt
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (release/0.1.0)
+$ git push origin --force release/0.1.0
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Writing objects: 100% (3/3), 245 bytes | 245.00 KiB/s, done.
+Total 3 (delta 0), reused 1 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'release/0.1.0' on GitHub by visiting:
+remote:      https://github.com/ahmad-al-nehlawi/ITMO-TEST/pull/new/release/0.1.0
+remote:
+To https://github.com/ahmad-al-nehlawi/ITMO-TEST.git
+ * [new branch]      release/0.1.0 -> release/0.1.0
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (release/0.1.0)
+$ git branch --all
+  develop
+  fetures
+  master
+* release/0.1.0
+  remotes/origin/develop
+  remotes/origin/fetures
+  remotes/origin/master
+  remotes/origin/release/0.1.0
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (release/0.1.0)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (master)
+$ git checkout devolop
+error: pathspec 'devolop' did not match any file(s) known to git
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (master)
+$ git checkout develop
+Switched to branch 'develop'
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (develop)
+$ git checkout -b hotfix
+Switched to a new branch 'hotfix'
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (hotfix)
+$ touch test.txt
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (hotfix)
+$ git add test.txt
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (hotfix)
+$ git commit -m "add test.txt"
+[hotfix 3f65036] add test.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test.txt
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (hotfix)
+$ git push origin --force hotfix
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 298 bytes | 298.00 KiB/s, done.
+Total 3 (delta 0), reused 1 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'hotfix' on GitHub by visiting:
+remote:      https://github.com/ahmad-al-nehlawi/ITMO-TEST/pull/new/hotfix
+remote:
+To https://github.com/ahmad-al-nehlawi/ITMO-TEST.git
+ * [new branch]      hotfix -> hotfix
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (hotfix)
+$ ^C
+
+Administrator@SHiniGami MINGW64 ~/Desktop/TEST (hotfix)
+$
